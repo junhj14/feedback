@@ -1,0 +1,18 @@
+services:
+  - type: worker
+    name: mqtt-feedback-worker
+    runtime: python
+    plan: free
+    buildCommand: ""
+    startCommand: python main.py
+    envVars:
+      - key: MQTT_BROKER
+        value: z05c66ff.ala.eu-central-1.emqxsl.com
+      - key: MQTT_PORT
+        value: "8883"
+      - key: MQTT_TOPIC
+        value: myapp/feedback
+      - key: MQTT_USERNAME
+        value: fb
+      - key: MQTT_PASSWORD
+        value: junhj14
